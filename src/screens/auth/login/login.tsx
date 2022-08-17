@@ -37,8 +37,8 @@ const styles = StyleSheet.create({
     borderRadius: 30,
   },
   btnLogin: {
-    borderColor: Colors.black,
-    backgroundColor: Colors.black,
+    borderColor: Colors.blue,
+    backgroundColor: Colors.blue,
     borderWidth: 2,
   },
   btnRegister: {
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     width: '100%',
     height: Dimensions.get('window').height * 0.4,
     resizeMode: 'cover',
-    backgroundColor: Colors.black,
+    backgroundColor: Colors.white,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
   },
   separator: {
     height: 2,
-    backgroundColor: Colors.gray,
+    backgroundColor: Colors.black,
     width: '90%',
     alignSelf: 'center',
     marginVertical: 5,
@@ -96,10 +96,10 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 20,
     padding: 20,
     marginTop: -20,
-    backgroundColor: Colors.blue2,
+    backgroundColor: Colors.white,
   },
   online: {
-    backgroundColor: Colors.yellow,
+    backgroundColor: Colors.blue,
     width: 200,
     borderRadius: 30,
     padding: 5,
@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   white: {
-    backgroundColor: Colors.blue2,
+    backgroundColor: Colors.blue,
     minHeight: Dimensions.get('window').height,
   },
 });
