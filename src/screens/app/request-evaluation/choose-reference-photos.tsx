@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
   },
   addPhoto: {
     alignItems: 'center',
-    backgroundColor: Colors.blue,
+    backgroundColor: Colors.grayBlue2,
     height: IMAGE_SIZE,
     justifyContent: 'center',
     width: IMAGE_SIZE,
@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   nextButton: {
-    backgroundColor: Colors.yellow,
+    backgroundColor: Colors.blue,
     borderRadius: 100,
     margin: 8,
     width: 120,
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
   backButton: {
     width: 120,
     alignSelf: 'center',
-    backgroundColor: Colors.black,
+    backgroundColor: Colors.gray2,
     borderRadius: 100,
     marginTop: 16,
     paddingHorizontal: 16,

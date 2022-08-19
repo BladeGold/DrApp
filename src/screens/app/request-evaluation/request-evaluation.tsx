@@ -200,7 +200,7 @@ const Tab = ({active, label, onPress, style}: TabProps): ReactElement => {
       <Text
         bold
         style={{
-          color: Colors.blue,
+          color: Colors.white,
           textAlign: 'center',
           opacity: active ? 1 : 0.33,
         }}>
@@ -221,7 +221,7 @@ const TabBar = ({leftTab, centerTab, rightTab}: TabBarProps): ReactElement => {
       onLayout={doSetWidth}
       style={{
         width: '100%',
-        backgroundColor: Colors.yellow,
+        backgroundColor: Colors.grayBlue2,
       }}>
       <View style={{left: -width / 4, flexDirection: 'row'}}>
         <View style={{width: width / 2}}>
@@ -242,7 +242,7 @@ const TabBar = ({leftTab, centerTab, rightTab}: TabBarProps): ReactElement => {
 
 const styles = StyleSheet.create({
   innerTabBar: {
-    backgroundColor: '#272b2e',
+    backgroundColor: Colors.blue3,
     flexDirection: 'row',
     width: '100%',
   },

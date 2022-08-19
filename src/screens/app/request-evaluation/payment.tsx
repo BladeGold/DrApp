@@ -322,7 +322,7 @@ const Payco = ({loading, onSubmit}: PaycoProps): ReactElement => {
       )}
     </View>
   );
-};
+}; 
 
 type PaymentProps = {
   loading: boolean;
@@ -393,13 +393,15 @@ const StripeComponent = ({loading,onSubmit,onError}: StripeProps): ReactElement 
   const [year, setYear] = useState<string | undefined>(undefined);
   const [cvc, setCVC] = useState<string | undefined | string>('');
   const [loadingStripe,setLoadingStripe] = useState<boolean>(false);
+  const [currencyType, setCurrencyType] = useState<number>(0);
+  const STRIPE = PAYMENT_METHODS.STRIPE;
 
   const fetchPrice = (): void => {
     setPrice('loading');
 
     PricesService.index({
       type: 'evaluation',
-      currencyId: CurrencyType.USD,
+      currencyId: currencyType,
     })
       .then(prices => {
         setPrice(prices[0]);
@@ -411,6 +413,7 @@ const StripeComponent = ({loading,onSubmit,onError}: StripeProps): ReactElement 
   };
 
   useEffect(() => {
+    setCurrencyType(CurrencyType.USD);
     fetchPrice();
   }, []);
 
@@ -466,6 +469,7 @@ const StripeComponent = ({loading,onSubmit,onError}: StripeProps): ReactElement 
     }).catch(err => {
       console.log(err);
     });
+
     if (res?.id) {
       try {
         const response: any = await StripeService.create({
@@ -473,16 +477,18 @@ const StripeComponent = ({loading,onSubmit,onError}: StripeProps): ReactElement 
           total: typeof price === 'object' ? price.amount : 0,
           token: res.id
         });
+        debugger
         onSubmit(JSON.stringify({
           response_code: response.payment.id,
           user_id: user.id,
           amount: typeof price === 'object' ? price.amount : 0,
-          currency_id: CurrencyType.USD,
-          method_id: PAYMENT_METHODS.STRIPE
-        }));
+          currency_id: currencyType,
+          method_id: STRIPE
+        }),);
       }
       catch(e) {
-        showAlert("Lo sentimos, no se pudo procesar su pago");
+        console.log(e)
+        showAlert("Lo sentimos, no se pudo procesar su pago error create");
       } finally {
         setLoadingStripe(false);
       }      
@@ -844,7 +850,7 @@ const IHaveACode = ({loading, onSubmit, onError}: IHaveACodeProps): ReactElement
                 onPress={(): void => {
                   setShowModal(false);
                 }}
-                style={[styles.button, { backgroundColor: Colors.black }]}
+                style={[styles.button, { backgroundColor: Colors.gray2 }]}
                 titleStyle={styles.buttonTitle}
                 textBold
                 title="Cancelar"
@@ -977,7 +983,7 @@ export const Payment = ({
             titleStyle={styles.buttonTitle}
             textBold
             title="Realizar pago manual"
-            onPress={() => Linking.openURL('https://openmy.bio/doctor-carlos-ramos')}
+            onPress={() => Linking.openURL('https://cards.bio/drcubillosgabriel')}
           />
         </View>
       </ScrollView>

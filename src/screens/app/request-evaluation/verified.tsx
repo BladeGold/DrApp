@@ -19,7 +19,7 @@ import {MandatoryPhotos} from './choose-photos';
 
 const styles = StyleSheet.create({
   outlineButton: {
-    backgroundColor: Colors.blue,
+    backgroundColor: Colors.golden,
     borderRadius: 56,
     borderWidth: 1,
     flexDirection: 'row',
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     width: 24,
     height: 24,
     marginEnd: 6,
-    tintColor: Colors.yellow,
+    tintColor: Colors.blue,
   },
   outlineButtonTitle: {
     color: 'white',
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
   button: {
     width: 120,
     alignSelf: 'center',
-    backgroundColor: Colors.yellow,
+    backgroundColor: Colors.blue,
     borderRadius: 100,
     margin: 8,
     paddingHorizontal: 16,
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
   buttonBlack: {
     width: 120,
     alignSelf: 'center',
-    backgroundColor: Colors.black,
+    backgroundColor: Colors.gray2,
     borderRadius: 100,
     margin: 8,
     paddingHorizontal: 16,
@@ -263,7 +263,7 @@ export const Verified = ({
           }}>
           <Text>
             <Text style={{color: 'black'}} bold>
-              Operaciones:
+              Operaciones: 
             </Text>
             {Array.from(procedures)
               .map(prop('name'))

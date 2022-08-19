@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
   mandatoryItem: {
     height: IMAGE_SIZE,
     width: IMAGE_SIZE,
-    backgroundColor: '#393a3c',
+    backgroundColor: Colors.grayBlue2,
     alignItems: 'center',
     justifyContent: 'center',
     borderRightWidth: 1,
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
   },
 
   nextButton: {
-    backgroundColor: Colors.yellow,
+    backgroundColor: Colors.blue,
     borderRadius: 100,
     margin: 8,
     width: 120,
@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
   backButton: {
     width: 120,
     alignSelf: 'center',
-    backgroundColor: Colors.black,
+    backgroundColor: Colors.gray2,
     borderRadius: 100,
     marginTop: 16,
     paddingHorizontal: 16,
@@ -193,7 +193,7 @@ const Item: FunctionComponent<ItemProps> = ({
 }: ItemProps) => (
   <TouchableOpacity
     onPress={onPress}
-    style={selected ? {backgroundColor: 'black'} : {}}>
+    style={selected ? {backgroundColor: Colors.blue3} : {}}>
     <Image
       source={{uri}}
       resizeMode="cover"
@@ -249,14 +249,14 @@ const Item: FunctionComponent<ItemProps> = ({
 const MandatoryItem = (props: any) => (
   <TouchableOpacity
     onPress={props.onPress}
-    style={[styles.mandatoryItem,props.selected ? {backgroundColor: 'black'} : {}]}>
+    style={[styles.mandatoryItem,props.selected ? {backgroundColor: Colors.blue3} : {}]}>
     <Image
       source={ { uri: props.item.icon_url } }
       resizeMode="cover"
       style={{width: 48, height: 48, marginTop: 3}}
     />
     <Text style={{
-      color: Colors.gray,
+      color: 'white',
       fontSize: 8,
       textAlign: 'center',
       width: '90%',
@@ -340,6 +340,7 @@ export const ChoosePhotos = ({
   const addPhoto = (): void => {
     openImagePicker()
       .then(uri => {
+        debugger
         const newPhotos = [...photos, {uri, rotation: 0}];
         setPhotos(newPhotos);
         requestAnimationFrame(() => {

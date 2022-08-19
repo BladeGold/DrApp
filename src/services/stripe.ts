@@ -9,6 +9,7 @@ interface Params {
 export const StripeService = {
   create: (data: Params) =>
     new Promise((resolve, reject) => {
+      debugger
       axios
         .post('stripe/create',data)
         .then(({data}) => {

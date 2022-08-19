@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     padding: 12,
   },
   yellowButton: {
-    backgroundColor: Colors.yellow,
+    backgroundColor: Colors.blue,
   },
   whiteButton: {
     backgroundColor: Colors.white,
@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   yellowTitle: {
-    color: Colors.yellow,
+    color: Colors.black,
     textAlign: 'center',
   },
   textArea: {

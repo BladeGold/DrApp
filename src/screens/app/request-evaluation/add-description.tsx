@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
   button: {
     width: 120,
     alignSelf: 'center',
-    backgroundColor: Colors.yellow,
+    backgroundColor: Colors.blue,
     borderRadius: 100,
     margin: 8,
     paddingHorizontal: 16,
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
   buttonBlack: {
     width: 120,
     alignSelf: 'center',
-    backgroundColor: Colors.black,
+    backgroundColor: Colors.gray2,
     borderRadius: 100,
     margin: 8,
     paddingHorizontal: 16,

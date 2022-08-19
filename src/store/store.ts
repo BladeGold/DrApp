@@ -1,4 +1,4 @@
-import AsyncStorage from '@react-native-community/async-storage';
+import {AsyncStorage} from 'react-native';
 import {useDispatch} from 'react-redux';
 import {rootReducer} from 'reducers';
 import {applyMiddleware, createStore} from 'redux';

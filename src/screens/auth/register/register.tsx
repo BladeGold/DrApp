@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
     height: '100%',
     paddingHorizontal: 16,
     paddingVertical: 30,
+    
   },
   profilePictureContainer: {
     width: 128,
@@ -38,8 +39,8 @@ const styles = StyleSheet.create({
     marginVertical: 24,
     borderRadius: 64,
     borderWidth: 3,
-    borderColor: Colors.yellow,
-    backgroundColor: Colors.gray,
+    borderColor: Colors.white,
+    backgroundColor: Colors.grayBlue2,
     alignSelf: 'center',
     alignItems: 'center',
     justifyContent: 'center',
@@ -58,7 +59,7 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
   },
   title: {
-    color: Colors.yellow,
+    color: Colors.white,
     fontSize: 18,
     marginBottom: 12,
     textAlign: 'center',

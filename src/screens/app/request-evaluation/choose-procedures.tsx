@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     marginEnd: 8,
   },
   button: {
-    backgroundColor: Colors.yellow,
+    backgroundColor: Colors.blue,
     borderRadius: 100,
     margin: 8,
     paddingHorizontal: 16,
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   itemSelected: {
-    borderColor: Colors.yellow,
+    borderColor: Colors.blue,
   },
 });
 
@@ -195,7 +195,7 @@ export const ChooseProcedures = ({
   const other = treatments.find((i: any) => i.other == 1);
 
   return (
-    <View style={ { flex: 1, backgroundColor: Colors.gray3 } }>
+    <View style={ { flex: 1, backgroundColor: Colors.white } }>
       <Modal
         avoidKeyboard
         isVisible={ modalTreatment }>            
@@ -230,7 +230,7 @@ export const ChooseProcedures = ({
               />
             )}
             ListHeaderComponent={
-              <Text style={{textAlign: 'center', color: Colors.gray}}>
+              <Text style={{textAlign: 'center', color: Colors.black}}>
                 Seleccione las operaciones a consultar
               </Text>
             }
@@ -241,6 +241,7 @@ export const ChooseProcedures = ({
               </View>
             }
           />
+          { treatments.length > 0 ?
           <FlatList
             contentContainerStyle={{paddingHorizontal: 36}}
             data={treatments.filter((i: any) => i.other == 0)}
@@ -262,9 +263,9 @@ export const ChooseProcedures = ({
               <React.Fragment>
                 <RNText style={{
                   textAlign: 'center', 
-                  color: Colors.yellow,
+                  color: Colors.white,
                   fontWeight: 'bold',
-                  backgroundColor: Colors.gray3,
+                  backgroundColor: Colors.grayBlue2,
                   position: 'relative',
                   zIndex: 2,
                   flexDirection: 'row', 
@@ -276,7 +277,7 @@ export const ChooseProcedures = ({
                 <View style={{ 
                   width: '100%', 
                   height: 2, 
-                  backgroundColor: Colors.yellow, 
+                  backgroundColor: Colors.white, 
                   position: 'relative', 
                   zIndex: 1,
                   top: -10 }} />
@@ -296,7 +297,16 @@ export const ChooseProcedures = ({
                     />
                   )
                 }                
-                <View
+               
+              </React.Fragment>
+            }
+            ListEmptyComponent={
+              <View style={styles.emptyContainer}>
+                <ActivityIndicator size="large" />
+              </View>
+            }
+          />  : null }
+           <View
                   style={{
                     padding: 16,
                     alignItems: 'center',
@@ -308,15 +318,7 @@ export const ChooseProcedures = ({
                     onPress={next}
                     textBold
                   />
-                </View>
-              </React.Fragment>
-            }
-            ListEmptyComponent={
-              <View style={styles.emptyContainer}>
-                <ActivityIndicator size="large" />
-              </View>
-            }
-          />        
+                </View>      
         </View>
       </ScrollView>
     </View>

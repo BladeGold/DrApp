@@ -100,7 +100,7 @@ export const EvaluationsService = {
   ): Promise<void> => {
     return axios.post(
       'evaluations/create',
-      objectToFormData({
+      {
         user_id: userId,
         procedures: Array.from(procedures),
         photos: photos.map(SentPhoto.toFile),
@@ -126,7 +126,7 @@ export const EvaluationsService = {
         [toSave]: true,
         payment,
         payment_code,
-      }),
+      },
       {
         onUploadProgress
       }

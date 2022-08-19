@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     resizeMode: 'cover',
   },
   item: {
-    backgroundColor: '#393a3c',
+    backgroundColor: Colors.grayBlue2,
     width: '100%',
     marginVertical: 5,
     borderRadius: 10,
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   itemText: {
-    color: 'white',
+    color: Colors.black,
     padding: 10,
     paddingTop: 15,
   },
@@ -43,12 +43,12 @@ const styles = StyleSheet.create({
   },
   itemIconContainer: {
     padding: 10,
-    backgroundColor: Colors.blue,
+    backgroundColor: Colors.blue2,
     borderTopLeftRadius: 10,
     borderBottomLeftRadius: 10,
   },
   chatButton: {
-    backgroundColor: Colors.blue,
+    backgroundColor: Colors.blue2,
     width: 50,
     height: 50,
     borderRadius: 35,
@@ -146,11 +146,11 @@ export const Dashboard: FunctionComponent = () => {
       icon: Icons.menu.evaluationHistory,
       onPress: evaluationHistory,
     },
-    // {
-    //   title: 'Consulta presencial',
-    //   icon: Icons.menu.appointments,
-    //   onPress: appointments,
-    // },
+     {
+       title: 'Consulta presencial',
+       icon: Icons.menu.appointments,
+       onPress: appointments,
+     },
   ];
 
   const payEvaluation = (): void => {

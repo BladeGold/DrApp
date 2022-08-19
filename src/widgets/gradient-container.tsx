@@ -9,7 +9,7 @@ interface GradientProps {
 }
 
 const GradientContainer = ({children, style}: GradientProps): ReactElement => (
-  <LinearGradient colors={[Colors.gradient1, Colors.gradient2]} style={style}>
+  <LinearGradient colors={[Colors.blue2, Colors.grayBlue]} style={style}>
     {children}
   </LinearGradient>
 );
